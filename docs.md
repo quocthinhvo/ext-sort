@@ -22,8 +22,9 @@ python main.py
 
 ### Bước 1: Tạo dữ liệu mẫu
 - Nhấn vào nút **Generate Random Data**.
+- Nhập số lượng phần tử cần tạo (mặc định 100).
 - Chọn vị trí lưu file (ví dụ: `data.bin`) và nhấn **Save**.
-- Chương trình sẽ tạo ra một file nhị phân chứa 100 số thực ngẫu nhiên.
+- Chương trình sẽ tạo ra một file nhị phân chứa các số thực ngẫu nhiên.
 
 ### Bước 2: Chọn tập tin dữ liệu
 - Nếu bạn đã có file dữ liệu, nhấn **Select Input File** để chọn file `.bin` cần sắp xếp.

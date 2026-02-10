@@ -5,7 +5,7 @@ from PyQt6.QtWidgets import (QApplication, QMainWindow, QWidget, QVBoxLayout,
                              QHBoxLayout, QPushButton, QLabel, QFileDialog, 
                              QSpinBox, QListWidget, QTextEdit, QProgressBar,
                              QGroupBox, QTableWidget, QTableWidgetItem, QHeaderView,
-                             QDoubleSpinBox)
+                             QDoubleSpinBox, QInputDialog)
 from PyQt6.QtCore import QThread, pyqtSlot, Qt
 from PyQt6.QtGui import QColor
 
@@ -139,11 +139,13 @@ class MainWindow(QMainWindow):
             self.load_preview()
 
     def generate_data(self):
-        count = 100  # Default count
+        count, ok = QInputDialog.getInt(self, "Generate Data", "Number of records:", 100, 10, 1000000, 10)
+        if not ok:
+            return
+            
         fname, _ = QFileDialog.getSaveFileName(self, "Save Generated Data", "data.bin", "Binary Files (*.bin)")
         if fname:
             sorter = ExternalSort()
-            # We assume a fixed small size for demo, or could ask user
             sorter.generate_data(fname, count)
             self.log(f"Generated {count} records to {fname}")
             self.input_file = fname
