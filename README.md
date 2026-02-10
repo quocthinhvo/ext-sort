@@ -21,3 +21,4 @@
 * **Bài tập**: Tạo ứng dụng minh họa sắp xếp ngoại
 
 
+![alt text](image.png)
